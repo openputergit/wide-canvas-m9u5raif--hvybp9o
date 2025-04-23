@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGlam - Sustainable Beauty Packaging</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            min-height: 100vh;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <!-- Navigation -->
+    <nav class="glass rounded-xl p-4 mb-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">EcoGlam</h1>
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <input type="search" placeholder="Search products..." class="glass px-4 py-2 rounded-lg text-white placeholder-white outline-none">
+                    <i class="bi bi-search absolute right-3 top-2.5 text-white"></i>
+                </div>
+                <i class="bi bi-heart text-white text-xl"></i>
+                <i class="bi bi-cart text-white text-xl"></i>
+                <button class="glass px-4 py-2 rounded-lg text-white">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Categories -->
+    <div class="glass rounded-xl p-4 mb-8 overflow-x-auto">
+        <div class="flex gap-4 min-w-max">
+            <button class="glass px-4 py-2 rounded-lg text-white">All</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Shampoo</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Conditioner</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Moisturizer</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Sunscreen</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Nail Polish</button>
+            <button class="glass px-4 py-2 rounded-lg text-white">Body Lotion</button>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="glass rounded-xl p-4 product-card">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Eco Shampoo" class="w-full h-48 object-cover rounded-lg mb-4">
+            <h3 class="text-white font-semibold">Eco-Friendly Shampoo</h3>
+            <p class="text-white/80 text-sm mb-2">100% Recyclable Packaging</p>
+            <div class="flex items-center justify-between">
+                <span class="text-white font-bold">$24.99</span>
+                <button class="glass px-3 py-1 rounded-lg text-white text-sm">Add to Cart</button>
+            </div>
+        </div>
+        <!-- More product cards (similar structure) -->
+    </div>
+
+    <!-- Sustainability Tips -->
+    <div class="glass rounded-xl p-6 mt-8">
+        <h2 class="text-xl font-bold text-white mb-4">Sustainability Tips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="glass p-4 rounded-lg">
+                <i class="bi bi-recycle text-white text-2xl mb-2"></i>
+                <h3 class="text-white font-semibold mb-2">Recycling Guide</h3>
+                <p class="text-white/80 text-sm">Learn how to properly recycle your beauty product packaging.</p>
+            </div>
+            <div class="glass p-4 rounded-lg">
+                <i class="bi bi-tree text-white text-2xl mb-2"></i>
+                <h3 class="text-white font-semibold mb-2">Eco-Impact</h3>
+                <p class="text-white/80 text-sm">Understanding your environmental footprint.</p>
+            </div>
+            <div class="glass p-4 rounded-lg">
+                <i class="bi bi-droplet text-white text-2xl mb-2"></i>
+                <h3 class="text-white font-semibold mb-2">Water Conservation</h3>
+                <p class="text-white/80 text-sm">Tips for reducing water usage in your beauty routine.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product filtering
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Filter products logic here
+                console.log('Filtering products:', button.textContent);
+            });
+        });
+
+        // Search functionality
+        document.querySelector('input[type="search"]').addEventListener('input', (e) => {
+            // Search products logic here
+            console.log('Searching for:', e.target.value);
+        });
+
+        // Cart functionality
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Add to cart logic here
+                console.log('Added to cart');
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
